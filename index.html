@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will’s Soccer Coaching</title>
+
+  <style>
+    :root {
+      --dark-green: #0b3d2e;
+      --green-accent: #1f704f;
+      --white: #ffffff;
+      --light-gray: #f4f4f4;
+      --text-color: #222222;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--light-gray);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+    header {
+      background: linear-gradient(135deg, var(--dark-green), var(--green-accent));
+      color: var(--white);
+      padding: 3rem 0;
+    }
+
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .hero h1 { font-size: 2.5rem; max-width: 600px; }
+
+    .hero p { font-size: 1.1rem; max-width: 550px; opacity: 0.95; }
+
+    .hero button {
+      margin-top: 1.5rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      border: none;
+      background-color: var(--white);
+      color: var(--dark-green);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      width: fit-content;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    }
+
+    .hero button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+    }
+
+    section { padding: 3rem 0; }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--dark-green);
+      margin-bottom: 0.75rem;
+    }
+
+    .about-box, .card, .contact-box {
+      background-color: var(--white);
+      padding: 1.6rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .cards, .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .price { margin-top: 0.75rem; font-weight: 700; color: var(--green-accent); }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 0.85rem;
+      color: #666666;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container hero">
+    <h1>Will’s Soccer Coaching</h1>
+    <p>Helping players in the greater Atlanta area improve skills and confidence</p>
+    <button id="bookButton">Book a session</button>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-box">
+      <p>
+        My name is Will Nozemack. I am a highly experienced club and high school soccer player.
+        I play club soccer at Woodward Academy and Inter Atlanta FC. I am ref certified and have
+        experience coaching young players at the Woodward Academy soccer camp.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="container">
+    <h2 class="section-title">Training Options</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>One on One Training</h3>
+        <p class="price">$15 per one hour session</p>
+      </div>
+      <div class="card">
+        <h3>Small Group Training</h3>
+        <p class="price">Prices may vary (2–3 players)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact & Rates</h2>
+    <div class="contact-grid">
+      <div class="contact-box">
+        <p>Email: <a href="mailto:Wmnozemack@gmail.com">Wmnozemack@gmail.com</a></p>
+      </div>
+      <div class="contact-box">
+        <ul>
+          <li><strong>One on One:</strong> $15 per one hour session</li>
+          <li><strong>Small Group (2–3 players):</strong> Prices may vary</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; <span id="year"></span> Will Nozemack</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("bookButton").addEventListener("click", function () {
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
